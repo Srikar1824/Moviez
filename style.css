@@ -1,24 +1,53 @@
+/* basic reset */
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #111;
   color: white;
   text-align: center;
 }
 
+/* heading */
+h1 {
+  margin: 20px 0;
+}
+
+/* container */
 #movies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
   padding: 20px;
 }
 
+/* movie card */
 .movie {
-  background: #222;
+  background-color: #222;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
+/* image */
 .movie img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+/* title */
+.movie h3 {
+  font-size: 16px;
+  margin: 8px 0 4px;
+}
+
+/* rating */
+.movie p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* small screens */
+@media (max-width: 600px) {
+  #movies-container {
+    grid-template-columns: 1fr;
+  }
 }
