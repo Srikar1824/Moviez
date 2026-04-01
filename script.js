@@ -1,37 +1,34 @@
-const API_KEY = "YOUR_API_KEY";
-const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
+const API_KEY = "6476163418146f2a54bb24346ddb82fe";
+const URL = "https://api.themoviedb.org/3/movie/popular?api_key=" + API_KEY;
 
 const container = document.getElementById("movies-container");
 
 async function fetchMovies() {
-  // loading
-  container.innerHTML = "<h2>Loading...</h2>";
+  container.innerHTML = "Loading...";
 
   try {
-    const response = await fetch(URL);   // wait for API
-    const data = await response.json();  // convert to JSON
+    const res = await fetch(URL);
+    const data = await res.json();
 
     const movies = data.results;
 
-    container.innerHTML = ""; // clear loading
+    container.innerHTML = "";
 
     for (let i = 0; i < movies.length; i++) {
-      const movie = movies[i];
+      const m = movies[i];
 
-      const div = document.createElement("div");
-      div.classList.add("movie");
+      const card = document.createElement("div");
+      card.className = "movie";
 
-      div.innerHTML = `
-        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
-        <h3>${movie.title}</h3>
-        <p>⭐ ${movie.vote_average}</p>
-      `;
+      card.innerHTML =
+        '<img src="https://image.tmdb.org/t/p/w500' + m.poster_path + '">' +
+        "<h3>" + m.title + "</h3>" +
+        "<p>⭐ " + m.vote_average + "</p>";
 
-      container.appendChild(div);
+      container.appendChild(card);
     }
-
-  } catch (error) {
-    container.innerHTML = "<h2>Error loading movies</h2>";
+  } catch (err) {
+    container.innerHTML = "Error loading movies";
   }
 }
 
