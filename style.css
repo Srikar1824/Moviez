@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  text-align: center;
+}
+
+#movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie {
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.movie img {
+  width: 100%;
+  border-radius: 10px;
+}
