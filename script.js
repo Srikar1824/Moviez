@@ -1,5 +1,5 @@
 const API_KEY = "6476163418146f2a54bb24346ddb82fe";
-const URL = "https://api.themoviedb.org/3/movie/popular?api_key=" + API_KEY;
+const URL = "https://api.themoviedb.org/3/movie/popular?api_key=" + API_KEY + "&language=en-US&page=1";
 
 const container = document.getElementById("movies-container");
 
