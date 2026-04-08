@@ -1,4 +1,3 @@
-/* basic reset */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -7,12 +6,17 @@ body {
   text-align: center;
 }
 
-/* heading */
 h1 {
   margin: 20px 0;
 }
 
-/* container */
+input, select {
+  padding: 8px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
 #movies-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -20,32 +24,27 @@ h1 {
   padding: 20px;
 }
 
-/* movie card */
 .movie {
   background-color: #222;
   padding: 10px;
   border-radius: 8px;
 }
 
-/* image */
 .movie img {
   width: 100%;
   border-radius: 8px;
 }
 
-/* title */
 .movie h3 {
   font-size: 16px;
   margin: 8px 0 4px;
 }
 
-/* rating */
 .movie p {
   font-size: 14px;
   color: #ccc;
 }
 
-/* small screens */
 @media (max-width: 600px) {
   #movies-container {
     grid-template-columns: 1fr;
